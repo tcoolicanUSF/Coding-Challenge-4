@@ -17,3 +17,11 @@ function displayProductDetails(Product) {
     console.log(`Stock Status: ${stockLevel}`);
 }
 
+//Task 3: Create a Function to Update Product Stock After Sales
+function updateStock (Inventory, unitsSold) {
+    let newStock = Inventory.Quantity -= unitsSold
+    return `Updated ${Inventory.name} quantity after the sales is: ${newStock}`
+}
+console.log(`${updateStock(Inventory[0],50)} 
+Helmet Availability: ${DetermineLowStock(Inventory[0])}`)
+
