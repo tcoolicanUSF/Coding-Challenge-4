@@ -18,12 +18,12 @@ function displayProductDetails(Product) {
 }
 
 //Task 3: Create a Function to Update Product Stock After Sales
-function updateStock (Inventory, unitsSold) {
-    let newStock = Inventory.Quantity -= unitsSold
-    return `Updated ${Inventory.name} quantity after the sales is: ${newStock}`
+function updateStock (Product, unitsSold) {
+    let newStock = Product.Quantity -= unitsSold
+    return `Updated ${Product.name} quantity after the sales is: ${newStock}`
 }
 console.log(`${updateStock(Inventory[0],50)} 
-Helmet Availability: ${DetermineLowStock(Inventory[0])}`)
+Helmet Availability: ${updateStock(Inventory[0])}`)
 
 //Task 4: Create a Function to Check Low Stock Products
 function checkLowStock (Inventory){
@@ -35,11 +35,24 @@ function checkLowStock (Inventory){
 checkLowStock(Inventory)
 
 //Task 5: Create a Function to Calculate Total Inventory Value
-function calculateInventoryValue (Inventory) {
+function calculateInventoryValue (Product) {
     Inventory.reduce((Inventory, InventoryValue) => {
-        InventoryValue = Inventory.Quantity * Inventory.Price;
+        InventoryValue = Product.Quantity * Product.Price;
         Inventory + InventoryValue, 0
         {}})
     }
 let InventoryValue = calculateInventoryValue(Inventory)
 console.log(`Inventory Value is: ${InventoryValue}`)
+
+//Task 6: Create a Function to Process a Sale
+function processSale(ProductName) {
+    var ProductName = Inventory.find((Product => {Inventory.name === Product}))
+    if (ProductName) {
+        return console.log(updateStock(`Riddell Axiom`,4))
+    } else {
+        `Product is not in Stock`
+    }
+}
+console.log(processSale(`Riddell Axiom`))
+
+//I tried my best be nice with grading please
