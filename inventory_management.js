@@ -25,3 +25,11 @@ function updateStock (Inventory, unitsSold) {
 console.log(`${updateStock(Inventory[0],50)} 
 Helmet Availability: ${DetermineLowStock(Inventory[0])}`)
 
+//Task 4: Create a Function to Check Low Stock Products
+function checkLowStock (Inventory){
+    Inventory.forEach(Product => {
+        if (Product.Quantity <= Product.lowStockLevel)
+            return console.log(`${Product.name} Low in Stock`)
+        } )
+    }
+checkLowStock(Inventory)
