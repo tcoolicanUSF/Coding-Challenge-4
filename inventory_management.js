@@ -33,3 +33,13 @@ function checkLowStock (Inventory){
         } )
     }
 checkLowStock(Inventory)
+
+//Task 5: Create a Function to Calculate Total Inventory Value
+function calculateInventoryValue (Inventory) {
+    Inventory.reduce((Inventory, InventoryValue) => {
+        InventoryValue = Inventory.Quantity * Inventory.Price;
+        Inventory + InventoryValue, 0
+        {}})
+    }
+let InventoryValue = calculateInventoryValue(Inventory)
+console.log(`Inventory Value is: ${InventoryValue}`)
